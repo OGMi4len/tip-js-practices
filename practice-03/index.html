@@ -1,10 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПР3 — Задачи (DOM и события)</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script type="module" src="./src/main.js"></script>
 </head>
 <body>
-$END$
+<header class="app-header">
+    <h1 id="page-title">Управление задачами</h1>
+    <nav class="dataset-switch">
+        <a href="./index.html">Общий набор</a>
+        <a href="./index.html?dataset=variant">Свой вариант</a>
+        <span class="nav-sep">·</span>
+        <a href="./examples/dom-events.html">Эксперименты</a>
+        <a href="./checks.html">Проверки</a>
+    </nav>
+</header>
+
+<main>
+    <section class="toolbar">
+        <div id="task-filters" class="filters" role="group" aria-label="Фильтр задач">
+            <button type="button" data-filter="all" aria-pressed="true">Все</button>
+            <button type="button" data-filter="pending" aria-pressed="false">В работе</button>
+            <button type="button" data-filter="completed" aria-pressed="false">Выполненные</button>
+        </div>
+    </section>
+
+    <section id="task-summary" class="summary">
+        <span>Всего: <b data-stat="total">0</b></span>
+        <span>Выполнено: <b data-stat="completed">0</b></span>
+        <span>Осталось: <b data-stat="pending">0</b></span>
+        <span>Прогресс: <b data-stat="progress">0.0%</b></span>
+        <span>Показано: <b data-stat="visible">0</b></span>
+    </section>
+
+    <p id="operation-message" class="operation-message" hidden></p>
+    <p id="empty-message" class="empty-message" hidden></p>
+
+    <ul id="task-list" class="task-list"></ul>
+</main>
 </body>
 </html>

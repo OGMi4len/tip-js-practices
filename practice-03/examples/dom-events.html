@@ -1,10 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>ПР3 — эксперименты с DOM и событиями</title>
+    <style>
+        body { font-family: system-ui, sans-serif; padding: 24px; max-width: 700px; margin: 0 auto; }
+        button { padding: 6px 12px; margin: 4px; }
+        ul { padding-left: 20px; }
+        #title-box { padding: 12px; border: 1px solid #ccc; border-radius: 6px; margin: 12px 0; }
+    </style>
+    <script type="module" src="./dom-events.js"></script>
 </head>
 <body>
-$END$
+<h1>Эксперименты DOM и событий</h1>
+
+<section>
+    <h2>1. Поиск элементов</h2>
+    <button id="btn-check-missing">Проверить отсутствующие</button>
+</section>
+
+<section>
+    <h2>2. dataset</h2>
+    <ul id="dataset-list">
+        <li><button data-task-id="23">Задача 23</button></li>
+    </ul>
+</section>
+
+<section>
+    <h2>3. Добавление записей</h2>
+    <button id="btn-add-item">Добавить запись</button>
+    <ul id="items-list"></ul>
+</section>
+
+<section>
+    <h2>4. textContent vs innerHTML</h2>
+    <button id="btn-change-title">Изменить заголовок</button>
+    <div id="title-box">Заголовок</div>
+</section>
+
+<section>
+    <h2>5. Распространение события</h2>
+    <div id="capture-zone" style="padding:12px; border:2px dashed #888;">
+        <button id="outer-button" type="button">
+            <span id="inner-span">Изменить заголовок</span>
+        </button>
+    </div>
+    <pre id="event-log" style="background:#f4f4f4; padding:12px; max-height:200px; overflow:auto;"></pre>
+</section>
 </body>
 </html>
