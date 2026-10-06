@@ -1,0 +1,208 @@
+* { box-sizing: border-box; }
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px;
+    color: #1a1a1a;
+    background: #fafafa;
+}
+
+h1 { margin: 0 0 8px; }
+
+.dataset-switch {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.dataset-switch a { color: #2563eb; text-decoration: none; }
+.dataset-switch a:hover { text-decoration: underline; }
+
+.toolbar { margin-bottom: 16px; }
+
+.filters { display: flex; gap: 8px; }
+
+.filters button {
+    padding: 6px 14px;
+    border: 1px solid #cbd5e1;
+    background: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.filters button.is-active {
+    background: #2563eb;
+    color: #fff;
+    border-color: #2563eb;
+}
+
+.filters button:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+.summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 12px 16px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.operation-message {
+    padding: 10px 14px;
+    background: #fef3c7;
+    border-left: 4px solid #f59e0b;
+    border-radius: 4px;
+    margin: 12px 0;
+}
+
+.empty-message {
+    padding: 20px;
+    text-align: center;
+    color: #64748b;
+    background: #fff;
+    border: 1px dashed #cbd5e1;
+    border-radius: 8px;
+    margin: 12px 0;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.task-card {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    padding: 14px 16px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    align-items: center;
+}
+
+.task-card.is-completed { opacity: 0.7; }
+.task-card.is-completed .task-title { text-decoration: line-through; }
+
+.task-title {
+    margin: 0 0 6px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.task-meta { display: flex; gap: 12px; font-size: 13px; }
+
+.task-status { color: #16a34a; }
+.task-card:not(.is-completed) .task-status { color: #dc2626; }
+
+.task-priority { color: #64748b; }
+
+.task-actions { display: flex; gap: 8px; }
+
+.task-actions button {
+    padding: 6px 10px;
+    border: 1px solid #cbd5e1;
+    background: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.task-actions button[aria-pressed="true"] {
+    background: #dcfce7;
+    border-color: #16a34a;
+}
+
+.task-actions button:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+.nav-sep {
+    color: #cbd5e1;
+}
+.form-panel {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.form-panel h2 { margin: 0 0 12px; font-size: 18px; }
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4px;
+    margin-bottom: 10px;
+}
+
+.form-row label { display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: #475569; }
+
+.form-row input,
+.form-row select {
+    padding: 8px 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.form-row input:disabled {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+.field-error { color: #dc2626; font-size: 12px; min-height: 14px; }
+
+.form-actions { display: flex; gap: 8px; margin-top: 8px; }
+
+.form-actions button {
+    padding: 8px 14px;
+    border: 1px solid #cbd5e1;
+    background: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.form-actions button[type="submit"] {
+    background: #2563eb;
+    color: #fff;
+    border-color: #2563eb;
+}
+
+.toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; gap: 12px; flex-wrap: wrap; }
+
+#reset-storage {
+    padding: 6px 12px;
+    border: 1px solid #fca5a5;
+    background: #fef2f2;
+    color: #b91c1c;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.status-message {
+    padding: 8px 12px;
+    background: #eff6ff;
+    border-left: 4px solid #2563eb;
+    border-radius: 4px;
+    font-size: 13px;
+    margin: 8px 0;
+}

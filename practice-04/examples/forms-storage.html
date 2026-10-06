@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>ПР4 — эксперименты форм и storage</title>
+    <style>
+        body { font-family: system-ui, sans-serif; padding: 24px; max-width: 700px; margin: 0 auto; }
+        form { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+        input, button { padding: 6px 10px; font-size: 14px; }
+        #log { background: #f4f4f4; padding: 12px; white-space: pre-wrap; border-radius: 6px; max-height: 300px; overflow: auto; }
+        .field-error { color: #dc2626; font-size: 12px; }
+    </style>
+    <script type="module" src="./forms-storage.js"></script>
+</head>
+<body>
+<h1>Эксперименты: формы и localStorage</h1>
+
+<form id="exp-form" novalidate>
+    <label>ID <input name="id" type="number" min="1" step="1" required></label>
+    <label>Название <input name="title" maxlength="100" required></label>
+    <span class="field-error" data-error="title"></span>
+    <button type="submit">Сохранить</button>
+</form>
+
+<pre id="log"></pre>
+</body>
+</html>

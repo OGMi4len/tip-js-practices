@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПР4 — Формы, валидация, localStorage</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script type="module" src="./src/main.js"></script>
+</head>
+<body>
+<header class="app-header">
+    <h1 id="page-title">Управление задачами</h1>
+    <nav class="dataset-switch">
+        <a href="./index.html">Общий набор</a>
+        <a href="./index.html?dataset=variant">Свой вариант</a>
+        <span class="nav-sep">·</span>
+        <a href="./examples/forms-storage.html">Эксперименты</a>
+        <a href="./checks.html">Проверки</a>
+    </nav>
+</header>
+
+<main>
+    <section class="form-panel">
+        <h2 id="form-title">Добавление задачи</h2>
+        <form id="task-form" novalidate>
+            <div class="form-row">
+                <label>
+                    ID
+                    <input name="id" type="number" min="1" step="1" required>
+                </label>
+                <span class="field-error" data-error="id"></span>
+            </div>
+
+            <div class="form-row">
+                <label>
+                    Название
+                    <input name="title" type="text" maxlength="100" required>
+                </label>
+                <span class="field-error" data-error="title"></span>
+            </div>
+
+            <div class="form-row">
+                <label>
+                    Приоритет
+                    <select name="priority">
+                        <option value="low">Низкий</option>
+                        <option value="medium" selected>Средний</option>
+                        <option value="high">Высокий</option>
+                    </select>
+                </label>
+                <span class="field-error" data-error="priority"></span>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" id="form-submit">Добавить задачу</button>
+                <button type="button" id="form-cancel" hidden>Отмена</button>
+            </div>
+        </form>
+    </section>
+
+    <section class="toolbar">
+        <div id="task-filters" class="filters" role="group" aria-label="Фильтр задач">
+            <button type="button" data-filter="all" aria-pressed="true">Все</button>
+            <button type="button" data-filter="pending" aria-pressed="false">В работе</button>
+            <button type="button" data-filter="completed" aria-pressed="false">Выполненные</button>
+        </div>
+        <button type="button" id="reset-storage">Сбросить сохранённые данные</button>
+    </section>
+
+    <section id="task-summary" class="summary">
+        <span>Всего: <b data-stat="total">0</b></span>
+        <span>Выполнено: <b data-stat="completed">0</b></span>
+        <span>Осталось: <b data-stat="pending">0</b></span>
+        <span>Прогресс: <b data-stat="progress">0.0%</b></span>
+        <span>Показано: <b data-stat="visible">0</b></span>
+    </section>
+
+    <p id="status-message" class="status-message" hidden></p>
+    <p id="operation-message" class="operation-message" hidden></p>
+    <p id="empty-message" class="empty-message" hidden></p>
+
+    <ul id="task-list" class="task-list"></ul>
+</main>
+</body>
+</html>
